@@ -1,0 +1,67 @@
+/*
+File name: contact.css
+Student Name: Marta Polishchuk
+Student ID: 301432299
+Date: October 1, 2024 
+ */
+
+.contact-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+    align-items: center;
+}
+
+.contact-wrapper p{
+    text-align: center;
+    line-height: 2em;
+
+}
+
+.contact-wrapper img{
+    width: 40px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+    vertical-align: middle; /* this alligns images vertivally with links*/
+}
+
+.contact-wrapper a{
+    color: #53f2f2;
+    text-decoration: underline;
+    padding: 3%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-container, .contact-form{
+  border-radius: 10px;
+  background-color: rgba(41, 41, 41, 0.568);
+  padding: 5em;
+  margin-top: 1%;
+  margin-left: 2em;
+  width: 100%;
+}
+
+.contact-form label, input, textarea{
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+input.button {
+width: 40%;
+}
+
+ul, ol {
+  list-style: none; /* Removes bullets and numbers */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
