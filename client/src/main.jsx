@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+/*
+File name: main.jsx
+Student Name: Marta Polishchuk
+Student ID: 301432299
+Date: October 1, 2024 
+ */
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-createRoot(document.getElementById('root')).render( // creation of the root element
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
+  </React.StrictMode>,
 )
