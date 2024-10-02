@@ -6,13 +6,14 @@ Date: October 1, 2024
  */
 
 // this file manages layout and navigation for the site
-
+import '../index.css'
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import outlet to render child routes
 
 export default function Layout() {
   return (
     <>
+      <img src="./src/assets/logo.png"></img>
       <h1>Marta Polishchuk</h1>
       <nav>
         <Link to="/">Home</Link> | 
