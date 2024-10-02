@@ -8,7 +8,7 @@ Date: October 1, 2024
 export default function Service() {
   return (
     <>
-      <p>My Services</p>
+      <p>Services Offered</p>
     </>
   );
 }
