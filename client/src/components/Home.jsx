@@ -12,9 +12,9 @@ export default function Home() {
     <div className="home-wrapper">
       {/* Mission Statement */}
       <section>
-      <h2>Hello, I'm Marta. Welcome to My Portfolio.</h2>
+      <h2>Hello, I'm <span style={{color: '#53f2f2'}}>Marta</span>. Welcome to My Portfolio.</h2>
         <p>
-        I am a second-year Software Engineering Technology Co-op student. Currently working on full-stack web development, Java programming, and advanced database concepts. Click the links below to learn more about me and my projects.
+        I am a second-year <span style={{color: '#FF69B4', fontWeight:'bold'}}>Software Engineering Technology Co-op student</span>. Currently working on full-stack web development, Java programming, and advanced database concepts. Click the links below to learn more about me and my projects.
         </p>
         <div className="buttons">
           <button><a href="/about">About</a></button>
