@@ -14,10 +14,15 @@ export default function Home() {
 
       {/* Mission Statement */}
       <section>
-        <h2>Marta Polishchuk</h2>
         <p>
-        I am a second-year Software Engineering Technology Co-op student. Currently working on full-stack web development, Java programming, and advanced database concepts.
+        I am a second-year Software Engineering Technology Co-op student. Currently working on full-stack web development, Java programming, and advanced database concepts. Click the links below to learn more about me and my projects.
         </p>
+        <div className="buttons">
+          <button><a href="/about">About</a></button>
+          <button><a href="/service">Services</a></button>
+          <button><a href="/project">Projects</a></button>
+          <button><a href="/contact">Contact</a></button>
+        </div>
       </section> 
     </div>
   );

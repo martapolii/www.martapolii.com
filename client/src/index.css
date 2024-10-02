@@ -4,6 +4,7 @@ Student Name: Marta Polishchuk
 Student ID: 301432299
 Date: October 1, 2024 
  */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -17,6 +18,14 @@ Date: October 1, 2024
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Logo */
+img{
+  width: 10%;
+  height: auto;
+  float: left;
+}
+
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;
@@ -27,6 +36,18 @@ a:hover {
   color: #535bf2;
 }
 
+nav {
+  float: right;
+  font-size: x-large;
+}
+
+nav a{
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+/* Body*/
 body {
   margin: 0;
 
@@ -36,8 +57,21 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.3em;
   line-height: 1.1;
+  padding-right: 120px; /* added padding bc logo threw it off center*/
+}
+
+h2{
+  font-size: 2.2em;;
+}
+
+
+/* Buttons */
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 
 button {
@@ -61,6 +95,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -76,7 +111,9 @@ button:focus-visible {
   }
 }
 
-nav {
-  float: right;
-  font-size: x-large;
-}
+
+
+
+
+
+
