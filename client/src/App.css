@@ -1,5 +1,12 @@
+/*
+File name: app.css
+Student Name: Marta Polishchuk
+Student ID: 301432299
+Date: October 1, 2024 
+ */
+
 #root {
-  max-width: 1280px;
+  max-width: 90vw; /*extended width*/
   margin: 0 auto;
   padding: 2rem;
   text-align: center;

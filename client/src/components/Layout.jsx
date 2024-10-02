@@ -12,18 +12,21 @@ import { Link } from 'react-router-dom'; // Import outlet to render child routes
 
 export default function Layout() {
   return (
-    <>
-      <img src="./src/assets/logo.png"></img>
-      <h1>Marta Polishchuk</h1>
-      <nav>
-        <Link to="/">Home</Link> | 
-        <Link to="/about">About</Link> | 
-        <Link to="/service">Services</Link> | 
-        <Link to="/project">Projects</Link> | 
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <br/>
-      <hr />
-    </>
+    <section>
+      <div className="header">
+        <div className="header-components">
+          <img className="logo" src="./src/assets/logo2.png" alt="Logo"></img>
+          <h1>MARTA POLISHCHUK</h1>
+        </div>
+        <nav>
+          <Link to="/">HOME</Link>  
+          <Link to="/about">ABOUT</Link> 
+          <Link to="/service">SERVICES</Link> 
+          <Link to="/project">PROJECTS</Link> 
+          <Link to="/contact">CONTACT</Link>
+        </nav>
+      </div>
+    </section>
   );
 }
+
