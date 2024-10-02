@@ -5,6 +5,7 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
+
 .contact-wrapper{
     display: flex;
     flex-direction: column;
@@ -19,24 +20,27 @@ Date: October 1, 2024
 .contact-wrapper p{
     text-align: center;
     line-height: 2em;
-
-}
-
-.contact-wrapper img{
-    width: 40px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 5px;
-    vertical-align: middle; /* this alligns images vertivally with links*/
 }
 
 .contact-wrapper a{
-    color: #53f2f2;
-    text-decoration: underline;
-    padding: 3%;
-    display: inline-flex;
-    align-items: center;
+  color: #53f2f2;
+  padding: 3%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-wrapper img{
+  width: 40px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 5px;
+  vertical-align: middle; /* this alligns images vertivally with links*/
+}
+
+ /* Contact Information & Form */
+.contact-container a:hover {
+  text-decoration: underline;
 }
 
 .contact-container, .contact-form{
@@ -56,12 +60,32 @@ Date: October 1, 2024
   padding-bottom: 1em;
 }
 
-input.button {
-width: 40%;
+/* Submit Button */
+input#button{
+  background-color: #242424;
+  color: #ffffff;
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 40%;
+  transition: border-color 0.25s;
 }
 
+input#button:hover{
+  color: #53f2f2;
+  border: 1px solid #53f2f2;
+}
+
+input#button:focus,
+input#button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* List */
 ul, ol {
   list-style: none; /* Removes bullets and numbers */
   padding: 0; /* Removes default padding */
   margin: 0; /* Removes default margin */
 }
+

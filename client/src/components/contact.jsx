@@ -6,6 +6,7 @@ Date: October 1, 2024
  */
 
 import '../contact.css'
+import '../index.css'
 
 export default function Contact() {
   return (
@@ -46,7 +47,7 @@ export default function Contact() {
           <label for="message">Message:</label><br/>
           <textarea id="message" name="message" required></textarea><br/>
 
-            <input className="button" type="submit" value="Submit"/>
+          <input id="button" type="submit" value="Submit"/>
 
         </form>
       </div>
