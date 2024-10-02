@@ -16,6 +16,7 @@ import About from './about';
 import Contact from './contact';
 import Service from './service';
 import Project from './project';
+import Layout from './components/Layout';
 
 const MainRouter = () => {
   return (
