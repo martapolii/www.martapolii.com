@@ -41,7 +41,7 @@ export default function Project() {
             <img src={proj1Imgs[2]} alt="PolishchukArt.com" />
           </div>
           <div>
-            <a href="https://polishchukart.com/">https://polishchukart.com/</a>
+            <a href="https://polishchukart.com/" target="blank">https://polishchukart.com/</a>
             <p>
               This is a personal website project built for Ihor Polishchuk, a Toronto-based artist. The site showcases a gallery of his artwork, a CV highlighting his exhibitions, and contact information. The site uses <span className="bold">HTML</span>, <span className="bold">CSS</span>, and <span className="bold">JavaScript</span> for <span className="bold">responsive design</span>, <span className="bold">gallery overlays</span>, and <span className="bold">mobile navigation</span>. I created, deploy, and continue to maintain this website. 
             </p>
@@ -68,7 +68,7 @@ export default function Project() {
             <img src={proj3Imgs[2]} alt="Bug Smasher Game" />
           </div>
           <div>
-            <a href="https://studentweb.cencol.ca/mpolish3/COMP125/Assignment3/">https://studentweb.cencol.ca/mpolish3/COMP125/Assignment3/</a>
+            <a href="https://studentweb.cencol.ca/mpolish3/COMP125/Assignment3/" target="blank">https://studentweb.cencol.ca/mpolish3/COMP125/Assignment3/</a>
             <p>
               The Bug Smasher game is an interactive <span className="bold">JavaScript</span>-based web game where players click on moving bugs to smash them within a time limit. The game uses <span className="bold">DOM manipulation</span> and <span className="bold">event handling</span> to detect user input, update scores, and provide a dynamic, fun experience with animations and timed interactions.
             </p>
