@@ -5,6 +5,7 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
+ /* General Formatting */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -19,19 +20,19 @@ Date: October 1, 2024
 }
 
 /* Header & navigation bar */
-div.header{
+div.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-div.header-components{
+div.header-components {
   display: flex;
   flex-direction: row;
 }
 
-.logo{
-  width: 10%;
+.logo {
+  width: 11%;
   height: auto;
 }
 
@@ -43,7 +44,7 @@ nav {
   font-size: 1.2em;
 }
 
-nav a{
+nav a {
   margin: 0 15px;
   margin-left: 5px;
   font-size: 0.8em;
@@ -59,19 +60,18 @@ a:hover {
   color: #53f2f2;
 }
 
-
 /* Body*/
 body {
   margin: 0;
   place-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url('./assets/background10.jpg');
+  background-image: url("./assets/background10.jpg");
   /*Photo by <a href="https://unsplash.com/@martz90?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Martin Martz</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-a-blurry-background-wrh3ux0AksA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
   */
 }
 
-.home-wrapper{
+.home-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,11 +79,11 @@ body {
   margin-top: 8%;
 }
 
-.home-wrapper p{
+.home-wrapper p {
   padding-bottom: 5%;
 }
 
-h2{
+h2 {
   font-size: 2.2em;
 }
 
@@ -92,9 +92,8 @@ h2{
   margin-left: 10%;
 }
 
-
 /* Buttons */
-.buttons{
+.buttons {
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -137,9 +136,7 @@ button:focus-visible {
   }
 }
 
-
-
-
-
-
-
+/* Bold text */
+.bold {
+  font-weight: bold;
+}

@@ -5,43 +5,50 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
-.projects-wrapper{
-    display: flex;
-    flex-direction: column;
-    margin: 2em;
-    padding: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1280px;
+ /* General Styling for Projects Page */
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1280px;
 }
 
-.projects-wrapper h3{
-    font-size: 2rem;
-    margin-bottom: 1em;
+.projects-wrapper h3 {
+  font-size: 2rem;
+  margin-bottom: 1em;
 }
 
-.project{
-    margin: 1em;
-    padding: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: rgba(41, 41, 41, 0.568);
+/* Styling for Each Project Section */
+.project {
+  margin: 1em;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: rgba(41, 41, 41, 0.568);
 }
 
-.project p{
-    line-height: 1.5;
-    font-size: 1rem;
+.project p {
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
+/* Styling for Project Images */
 .projects-wrapper .carousel img {
-    max-width: 300px;
-    max-height: 300px;
-    object-fit: cover; 
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 1%;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1%;
 }
 
+/* Styling for Project Links */
 .project a {
-    color: #53f2f2;
-    text-decoration: underline;
+  color: #53f2f2;
+}
+
+.project a:hover {
+  text-decoration: underline;
 }

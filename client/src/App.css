@@ -5,8 +5,9 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
+/* mostly pre-existing code*/
 #root {
-  max-width: 90vw; /*extended width*/
+  max-width: 90vw; /*extended the width*/
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -18,9 +19,11 @@ Date: October 1, 2024
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -29,6 +32,7 @@ Date: October 1, 2024
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
