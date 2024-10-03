@@ -5,8 +5,7 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
- /* About Section */
-.about-wrapper {
+.about-wrapper{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,22 +16,19 @@ Date: October 1, 2024
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Headshot */
-.about-wrapper img {
+.about-wrapper img{
     width: 100%;
     max-width: 300px;
     border-radius: 10%;
     margin: 1em;
 }
 
-/* Heading */
-.about-wrapper h2 {
-    text-align: left;
-    margin-left: 2%;
+.about-wrapper h2{
+  text-align: left;
+  margin-left: 2%;
 }
 
-/* Paragraph */
-.about-wrapper p {
+.about-wrapper p{
     font-size: 1.2em;
     line-height: 1.5;
     margin: 1em;

@@ -5,31 +5,31 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
- /* General Styling for Contact Page */
-.contact-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  max-width: 600px;
-  margin: auto;
-  align-items: center;
+
+.contact-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+    align-items: center;
 }
 
-.contact-wrapper p {
-  text-align: center;
-  line-height: 2em;
+.contact-wrapper p{
+    text-align: center;
+    line-height: 2em;
 }
 
-.contact-wrapper a {
+.contact-wrapper a{
   color: #53f2f2;
   padding: 3%;
   display: inline-flex;
   align-items: center;
 }
 
-.contact-wrapper img {
+.contact-wrapper img{
   width: 40px;
   height: auto;
   border-radius: 10px;
@@ -38,13 +38,12 @@ Date: October 1, 2024
   vertical-align: middle; /* this alligns images vertivally with links*/
 }
 
-/* Contact Information & Form */
+ /* Contact Information & Form */
 .contact-container a:hover {
   text-decoration: underline;
 }
 
-.contact-container,
-.contact-form {
+.contact-container, .contact-form{
   border-radius: 10px;
   background-color: rgba(41, 41, 41, 0.568);
   padding: 5em;
@@ -53,9 +52,7 @@ Date: October 1, 2024
   width: 100%;
 }
 
-.contact-form label,
-input,
-textarea {
+.contact-form label, input, textarea{
   width: 100%;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -64,7 +61,7 @@ textarea {
 }
 
 /* Submit Button */
-input#button {
+input#button{
   background-color: #242424;
   color: #ffffff;
   border: none;
@@ -75,7 +72,7 @@ input#button {
   transition: border-color 0.25s;
 }
 
-input#button:hover {
+input#button:hover{
   color: #53f2f2;
   border: 1px solid #53f2f2;
 }
@@ -86,9 +83,9 @@ input#button:focus-visible {
 }
 
 /* List */
-ul,
-ol {
+ul, ol {
   list-style: none; /* Removes bullets and numbers */
   padding: 0; /* Removes default padding */
   margin: 0; /* Removes default margin */
 }
+
