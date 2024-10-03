@@ -13,21 +13,21 @@ export default function Project() {
   
   //Image files are in array because I wantd to make a carousel - will implement this in my own time.
   const proj1Imgs = [
-    '/assets/project1.png',
-    '/assets/project1b.png',
-    '/assets/project1c.png'
+    '/project1.png',
+    '/project1b.png',
+    '/project1c.png'
   ];
   
   const proj2Imgs = [
-    '/assets/project2.png',
-    '/assets/project2b.png',
-    '/assets/project2c.png',
+    '/project2.png',
+    '/project2b.png',
+    '/project2c.png',
   ];
   
   const proj3Imgs = [
-    '/assets/project3.png',
-    '/assets/project3b.png',
-    '/assets/project3c.png'
+    '/project3.png',
+    '/project3b.png',
+    '/project3c.png'
   ];
 
     return (
