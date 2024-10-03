@@ -65,7 +65,7 @@ body {
   place-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url('/background10.jpg');
+  background-image: url('/assets/background10.jpg');
   /*Photo by <a href="https://unsplash.com/@martz90?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Martin Martz</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-a-blurry-background-wrh3ux0AksA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
   */
 }
