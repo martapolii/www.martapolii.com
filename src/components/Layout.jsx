@@ -15,7 +15,7 @@ export default function Layout() {
     <section>
       <div className="header">
         <div className="header-components">
-          <img className="logo" src="public\assets\logo2.png" alt="Logo"></img>
+          <img className="logo" src="/assets/logo2.png" alt="Logo"></img>
           <h1>MARTA POLISHCHUK</h1>
         </div>
         <nav>

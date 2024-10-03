@@ -10,7 +10,7 @@ import '../index.css'
 export default function About() {
   return (
     <section className="about-wrapper">
-      <img src="./public/assets/headshot.jpg" alt="Headshot of Marta Polishchuk"></img>
+      <img src="/assets/headshot.jpg" alt="Headshot of Marta Polishchuk"></img>
       <div className="about-text">
         <h2>About Me</h2>
           <p>
