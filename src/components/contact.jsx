@@ -22,11 +22,11 @@ export default function Contact() {
         <div>
             <ul>
               <li>
-                <img src="./src/assets/linkedin.png" alt="LinkedIn" />
+                <img src="./public/assets/linkedin.png" alt="LinkedIn" />
                 <a href="https://www.linkedin.com/in/marta-polishchuk/">LinkedIn</a>
               </li>
               <li>
-                <img src="./src/assets/github.png" alt="GitHub" />
+                <img src="./public/assets/github.png" alt="GitHub" />
                 <a href="https://github.com/martapolii">GitHub</a>
               </li>
             </ul>

@@ -13,22 +13,22 @@ export default function Project() {
   
   //Image files are in array because I wantd to make a carousel - will implement this in my own time.
   const proj1Imgs = [
-    './src/assets/project1.png',
-    './src/assets/project1b.png',
-    './src/assets/project1c.png'
+    '/public/assets/project1.png',
+    '/public/assets/project1b.png',
+    '/public/assets/project1c.png'
   ];
   
-    const proj2Imgs = [
-      './src/assets/project2.png',
-      './src/assets/project2b.png',
-      './src/assets/project2c.png',
-    ];
+  const proj2Imgs = [
+    '/public/assets/project2.png',
+    '/public/assets/project2b.png',
+    '/public/assets/project2c.png',
+  ];
   
-    const proj3Imgs = [
-      './src/assets/project3.png',
-      './src/assets/project3b.png',
-      './src/assets/project3c.png'
-    ];
+  const proj3Imgs = [
+    '/public/assets/project3.png',
+    '/public/assets/project3b.png',
+    '/public/assets/project3c.png'
+  ];
 
     return (
     <section className="projects-wrapper">
