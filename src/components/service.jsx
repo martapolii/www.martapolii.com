@@ -38,7 +38,7 @@ export default function Service() {
           <p>Strong <span className="bold">problem-solving skills</span> in <span className="bold">Discrete Mathematics</span>, including <span className="bold">logic</span>, <span className="bold">set theory</span>, and <span className="bold">Boolean algebra</span>. I apply these <span className="bold">analytical abilities</span> to optimize <span className="bold">software development processes</span> and solve complex problems.</p>
         </li>
         <li>
-        <img src="/assets/linux.png" alt="linux icon"></img>
+        <img src="./public/assets/linux.png" alt="linux icon"></img>
           <h3>Unix/Linux Environments</h3>
           {/*<a href="https://www.flaticon.com/free-icons/linux" title="linux icons">Linux icons created by Freepik - Flaticon</a> */}
           <p>Experienced in <span className="bold">scripting</span>, <span className="bold">file management</span>, and <span className="bold">basic system administration</span> in <span className="bold">Unix/Linux environments</span>. I can help <span className="bold">automate tasks</span>, <span className="bold">manage files</span>, and <span className="bold">maintain system stability</span> for server or desktop environments.</p>
