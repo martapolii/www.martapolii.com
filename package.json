@@ -1,7 +1,7 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "server.js",
   "repository": "https://github.com/martapolii/Portfolio.git",
   "author": "martapolii <mpolish3@my.centennialcollege.ca>",
   "license": "MIT",
@@ -10,7 +10,8 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server.js\"",
+    "dev": "nodemon server.js",
+    "start": "node server.js" ,
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

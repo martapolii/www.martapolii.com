@@ -15,7 +15,7 @@ const app = express(); // initializes the express application
 const assetsRouter = require("./server/assets-router");app.use("/src", assetsRouter);
 
 //3. Serving Static Files: 
-app.use("/", express.static(path.join(__dirname, "public"))); //middleware that serves static files from the public folder when the root URL (/) is specified 
+app.use("/", express.static(path.join(__dirname, "client", "dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
 
 //4. API Endpoint: 
 app.get("/api/v1", (req, res) => { //defines a route handler for GET requests to /api/v1
