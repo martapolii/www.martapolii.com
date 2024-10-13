@@ -36,3 +36,6 @@ app.listen(PORT, () => { // starts express server on specified port
   console.log();
   console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${PORT}/\x1b[0m`); // prints URL where server can be accessed 
 });
+
+// Importing the assets router defined in assets-router.js:
+const assetsRouter = require("./server/assets-router");app.use("/src", assetsRouter);
