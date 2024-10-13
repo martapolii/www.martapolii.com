@@ -11,6 +11,9 @@ const path = require("path"); // to work with file and directory paths
 //2. Creating an Express application:
 const app = express(); // initializes the express application
 
+//7. Importing the assets router defined in assets-router.js:
+const assetsRouter = require("./server/assets-router");app.use("/src", assetsRouter);
+
 //3. Serving Static Files: 
 app.use("/", express.static(path.join(__dirname, "public"))); //middleware that serves static files from the public folder when the root URL (/) is specified 
 
@@ -37,5 +40,4 @@ app.listen(PORT, () => { // starts express server on specified port
   console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${PORT}/\x1b[0m`); // prints URL where server can be accessed 
 });
 
-// Importing the assets router defined in assets-router.js:
-const assetsRouter = require("./server/assets-router");app.use("/src", assetsRouter);
+
