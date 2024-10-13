@@ -15,7 +15,7 @@ const app = express(); // initializes the express application
 const assetsRouter = require("./server/assets-router");app.use("/src", assetsRouter);
 
 //3. Serving Static Files: 
-app.use("/", express.static(path.join(__dirname, "client", "dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
+app.use("/", express.static(path.join(__dirname, "public"))); //middleware that serves static files from the public folder when the root URL (/) is specified 
 
 //4. API Endpoint: 
 app.get("/api/v1", (req, res) => { //defines a route handler for GET requests to /api/v1
@@ -27,17 +27,21 @@ app.get("/api/v1", (req, res) => { //defines a route handler for GET requests to
 
 //5. Catch-All Route for client-side routing: 
 app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
-  res.sendFile(path.join(__dirname, "client", "index.html")); //serves index.html from the public directory. useful for SPA's
+  res.sendFile(path.join(__dirname, "public", "index.html")); //serves index.html from the public directory. useful for SPA's
+/***********************************************************
+^ this is where the code for the message requested in assignment 2 is, it is served through the public/index.html file. 
+***********************************************************/
 })
 
 //6. Starting the server 
-const { PORT = 5000 } = process.env; // sets port variable to 5000 unless specified in .env
+const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env
 app.listen(PORT, () => { // starts express server on specified port
   // console.log prints messages to the console
   console.log();
   console.log(`  App running in port ${PORT}`); // server is running
   console.log();
   console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${PORT}/\x1b[0m`); // prints URL where server can be accessed 
+
 });
 
 
