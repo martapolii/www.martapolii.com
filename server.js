@@ -27,7 +27,7 @@ app.get("/api/v1", (req, res) => { //defines a route handler for GET requests to
 
 //5. Catch-All Route for client-side routing: 
 app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
-  res.sendFile(path.join(__dirname, "public", "index.html")); //serves index.html from the public directory. useful for SPA's
+  res.sendFile(path.join(__dirname, "client", "index.html")); //serves index.html from the public directory. useful for SPA's
 })
 
 //6. Starting the server 
