@@ -10,13 +10,14 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js" ,
+    "dev": "concurrently 'vite' \"nodemon server.js\"",
+    "start": "node server.js",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^4.21.1",
     "global": "^4.4.0"
   }
 }
