@@ -1,11 +1,11 @@
 {
   "homepage": "https://martapolii.github.io/Portfolio",
-  "name": "Portfolio",
+  "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently 'vite' 'nodemon server.js'",
+    "dev": "concurrently vite nodemon server.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -22,6 +22,7 @@
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "concurrently": "^9.0.1",
     "eslint": "^9.9.0",
