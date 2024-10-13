@@ -23,7 +23,7 @@ export default function Home() {
           <button><a href="/contact">Contact</a></button>
         </div>
       </section> 
-      <img className="CheekyCode" src="client\public\assets\coderFunction.png" alt="C# code snipet of an object of the Coder class defining variables that align with my hard/soft skills"/>
+      <img className="CheekyCode" src="/assets/coderFunction.png" alt="C# code snipet of an object of the Coder class defining variables that align with my hard/soft skills"/>
     </div>
   );
 }
