@@ -1,6 +1,6 @@
 {
   "homepage": "https://martapolii.github.io/Portfolio",
-  "name": "client",
+  "name": "Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -23,6 +23,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "concurrently": "^9.0.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
@@ -31,5 +32,9 @@
     "globals": "^15.9.0",
     "nodemon": "^3.1.7",
     "vite": "^5.4.8"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/martapolii/Portfolio.git",
+  "author": "martapolii <mpolish3@my.centennialcollege.ca>",
+  "license": "MIT"
 }
