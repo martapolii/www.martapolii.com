@@ -18,6 +18,23 @@ Date: October 1, 2024
   -moz-osx-font-smoothing: grayscale;
 }
 
+html{
+  background-image: url('/assets/background10.jpg');
+  /*Photo by <a href="https://unsplash.com/@martz90?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Martin Martz</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-a-blurry-background-wrh3ux0AksA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; 
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
 /* Header & navigation bar */
 div.header{
   display: flex;
@@ -30,14 +47,9 @@ div.header-components{
   flex-direction: row;
 }
 
-.logo{
-  width: 10%;
-  height: auto;
-}
 
 h1 {
-  font-size: 2em;
-  line-height: 1.1;
+  font-size: 2.5em;
 }
 nav {
   font-size: 1.2em;
@@ -55,6 +67,10 @@ a {
   text-decoration: inherit;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 a:hover {
   color: #53f2f2;
 }
@@ -63,9 +79,9 @@ a:hover {
 body {
   display: flex;
   min-height: 100vh;
-  background-image: url('/assets/background10.jpg');
-  /*Photo by <a href="https://unsplash.com/@martz90?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Martin Martz</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-a-blurry-background-wrh3ux0AksA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  */
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 .bold{
@@ -122,10 +138,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Dark mode */
+/* light mode */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #53f2f2;
+    color: #060707;
     background-color: #ffffff;
   }
 
@@ -138,6 +154,66 @@ button:focus-visible {
   }
 }
 
+
+
+
+/* mobile queries */
+@media (max-width: 768px) {
+  html, body {
+    width: 100vw;
+    min-height: 100vh; /* Ensures full height on mobile */
+    padding: 0;
+    margin: 0;
+  }
+
+  #root {
+    width: 100vw;
+    min-height: 100vh; /* Adjust this if necessary */
+    padding: 0;
+    margin: 0;
+  }
+
+  div.header{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+
+  div.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh; /* Ensure this stretches to full height */
+  }
+
+  p{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .CheekyCode {
+    width: 90%;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    max-width: 50%;
+    margin-bottom: 30px;
+    margin: auto;
+  }
+}
 
 
 
