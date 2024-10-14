@@ -67,10 +67,6 @@ a {
   text-decoration: inherit;
 }
 
-.mobile-nav {
-  display: none;
-}
-
 a:hover {
   color: #53f2f2;
 }

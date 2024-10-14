@@ -34,7 +34,7 @@ Date: October 1, 2024
 
 .projects-wrapper .carousel img {
     max-width: 300px;
-    max-height: 300px;
+    height: fit-content;
     object-fit: cover; 
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

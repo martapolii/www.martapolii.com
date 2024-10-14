@@ -18,6 +18,7 @@ Date: October 1, 2024
     width: 30%;
     max-width: 100px;
     margin: 1em;
+    height: fit-content;
 }
 
 .service-wrapper li{

@@ -5,6 +5,9 @@ Student ID: 301432299
 Date: October 1, 2024 
  */
 
+div.header{
+width: 90vw;
+}
 
 .contact-wrapper{
     display: flex;
