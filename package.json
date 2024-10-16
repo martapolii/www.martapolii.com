@@ -2,7 +2,7 @@
   "name": "Portfolio",
   "version": "1.0.0",
   "main": "server.js",
-  "repository": "https://github.com/martapolii/www.martapolii.com.git",
+  "repository": "https://martapolii.github.io/www.martapolii.com",
   "author": "martapolii <mpolish3@my.centennialcollege.ca>",
   "license": "MIT",
   "devDependencies": {
