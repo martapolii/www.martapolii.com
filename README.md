@@ -8,7 +8,7 @@ Welcome to my personal portfolio website repository, developed using React. This
 - Services: A brief list of services I offer, such as web development and app development.
 - Contact: An interactive form for users to send messages, capturing details like name, email, and phone number.
 
-Currently, I am enhancing this portfolio by adding a backend using Node.js Express and MongoDB. The backend handles REST APIs for user and contact management, integrating a MongoDB database to store user and contact information. CRUD operations for contacts and users are being developed, and the backend is tested using Postman.
+Currently, I am enhancing this portfolio by adding a backend using Node.js Express and MongoDB. The backend handles REST APIs for user and contact management, integrating a MongoDB database to store user and contact information. CRUD operations for contacts and users are being developed, and the backend is tested using Postman. I am also working on creating media queries to make the site compatible with a wide range of devices, and adding more content.
 
 The site demonstrates responsive design principles and is fully hosted online using Git and version control best practices. Feel free to explore the source code and see how I’ve applied React and Node.js to build a functional, full-stack, responsive portfolio.
 
