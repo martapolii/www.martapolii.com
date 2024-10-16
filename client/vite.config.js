@@ -6,7 +6,8 @@ export default defineConfig({
   root: '../client', //setting the root directory
   plugins: [react()],
   build: {
-   outDir: '../dist', //setting the output directory
+   outDir: '../dist', //setting the output directory in the dist folder in the root 
+   emptyOutDir: true, // clears the output directory before building
     manifest: true,
     rollupOptions: {
       input: "./index.html", //setting the entry point
