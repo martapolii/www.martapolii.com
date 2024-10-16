@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite\" \"nodemon ../server.js\"",
+    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "express": "^4.21.1",
