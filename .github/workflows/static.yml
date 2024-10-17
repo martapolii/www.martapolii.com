@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ../dist  # set path to dist folder reltive to client folder, bc Vite.config.js defined the client folder as the root 
+          path: ./dist  # set path to dist folder reltive to client folder, bc Vite.config.js defined the client folder as the root 
 
       - name: Deploy to GitHub Pages
         id: deployment
