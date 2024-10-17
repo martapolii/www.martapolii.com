@@ -27,7 +27,7 @@ app.get("/", (_req, res) => {
 });
 
 //5. Serving Static Files: 
-app.use("/", express.static(path.join(__dirname, "dist"))); //middleware that serves static files from the public folder when the root URL (/) is specified 
+app.use("/", express.static(path.join(__dirname, "dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
 
 //6. API Endpoint: 
 app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
@@ -39,7 +39,7 @@ app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests t
 
 //7. Catch-All Route for client-side routing: 
 app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
-  res.sendFile(path.join(__dirname, "client", "index.html")); //serves index.html from the client directory
+  res.sendFile(path.join(__dirname, "dist", "index.html")); //serves index.html from the client directory
 })
 
 //8. Starting the server 
