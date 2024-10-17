@@ -7,7 +7,6 @@ import path from 'path'; // to use path.resolve
 
 
 export default defineConfig({
-  base: '/www.martapolii.com/', // Base URL for GitHub Pages
   root: '.', // setting the root directory to the current directory
   plugins: [react()],
   build: {
