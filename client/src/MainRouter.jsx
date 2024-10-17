@@ -8,7 +8,7 @@ Date: October 1, 2024
 //file to manage navigation between pages, by storing route paths (similar to anchor elements in html)
 
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; //HashRouter is better for static sites
 
 // Importing components
 import Home from './components/Home';
@@ -24,11 +24,11 @@ const MainRouter = () => {
     <div>
       <Layout/>
         <Routes> 
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/about' element={<About />} />
-          <Route exact path='/contact' element={<Contact />} />
-          <Route exact path='/service' element={<Service />} />
-          <Route exact path='/project' element={<Project />} />
+          <Route path='/' element={<Home />} /> 
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/service' element={<Service />} />
+          <Route path='/project' element={<Project />} />
         </Routes>
     </div>
   );
