@@ -1,5 +1,5 @@
 {
-  "homepage": "https://www.martapolii.com/",
+  "homepage": "https://martapolii.github.io/www.martapolii.com/",
   "name": "client",
   "private": true,
   "version": "0.0.0",
@@ -35,7 +35,7 @@
     "vite": "^5.4.8"
   },
   "main": "../server.js",
-  "repository": "https://martapolii.github.io/www.martapolii.com",
+  "repository": "https://martapolii.github.io/www.martapolii.com/",
   "author": "martapolii <mpolish3@my.centennialcollege.ca>",
   "license": "MIT"
 }
