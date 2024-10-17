@@ -1,11 +1,18 @@
 {
   "index.html": {
-    "file": "assets/index-BmSsMrS1.js",
+    "file": "assets/index-BtNVYB3B.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
     "css": [
       "assets/index-BAAimqBv.css"
+    ],
+    "assets": [
+      "assets/favicon-siCQw_Za.png"
     ]
+  },
+  "public/assets/favicon.png": {
+    "file": "assets/favicon-siCQw_Za.png",
+    "src": "public/assets/favicon.png"
   }
 }
