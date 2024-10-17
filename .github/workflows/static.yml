@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://martapolii.github.io/www.martapolii.com/ # set your websites UURL
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # Path to your build output directory
+          path: ../dist  # set path to dist folder reltive to client folder, bc Vite.config.js defined the client folder as the root 
 
       - name: Deploy to GitHub Pages
         id: deployment
