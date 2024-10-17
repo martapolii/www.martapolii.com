@@ -10,7 +10,7 @@ export default defineConfig({
    emptyOutDir: true, // clears the output directory before building
     manifest: true,
     rollupOptions: {
-      input: "./main.jsx", //setting the entry point
+      input: "./index.html", //setting the entry point
     },
   },
 });
