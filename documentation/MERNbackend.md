@@ -112,6 +112,7 @@ cors: yarn add cors
 import config from './config/config.js'; to set the port #
 app.use(express.static(path.join(__dirname, "../dist")));
 - update the app.listen function that sets the port with the config 
+**** this is where you would display a message in browser when running the server****
 
 - added an.env file in root and defined port #
 - the install dotenv to load environmemtal variables
@@ -122,3 +123,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 port 5173 serves the front end using vite
 port 5001 serves the front end using express 
+
+#5 Implement a user model with mongoose 
+1. Setting up Mongoose 
+yarn add mongoose
+- update server.js toimport the mongoose module
