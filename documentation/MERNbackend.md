@@ -138,3 +138,10 @@ res.status(200).send(Template())
 ...
 - Run npm install mongodb
 - add connection string (mongoURi)
+    - add connection string as environmental variable and add .gitignore file with .env in it
+- update server.js
+import app from './server/express.js'
+throw new Error(`unable to connect to database: ${config.mongoUri}`) 
+- run the server:
+cd client
+yarn dev
