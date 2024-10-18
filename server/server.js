@@ -13,8 +13,6 @@ Date: October 13, 2024
 
 // import dotenv to use environment variables
 import dotenv from 'dotenv';
-dotenv.config();
-
 
     // had to add these to use ES modules since __dirame is not available by default:
     import { fileURLToPath } from 'url';
@@ -46,6 +44,7 @@ mongoose.connection.on('error', () => {
 throw new Error(`unable to connect to database: ${config.mongoUri}`) 
 })
 
+dotenv.config({ path: path.resolve(__dirname, '../.env') }); // make sure dotenv is reading .env file from the root directory
 //2. Creating the Express application:
 const app = express(); // initializes the express application
 

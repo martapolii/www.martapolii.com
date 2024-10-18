@@ -118,11 +118,14 @@ app.use(express.static(path.join(__dirname, "../dist")));
 - the install dotenv to load environmemtal variables
  npm install dotenv
  - import dotenv in server.js:
+
  // import dotenv to use environment variables
 import dotenv from 'dotenv';
 dotenv.config();
 port 5173 serves the front end using vite
 port 5001 serves the front end using express 
+- configure to read .env from root folder:
+ dotenv.config({ path: path.resolve(__dirname, '../.env') }); 
 
 #5 Implement a user model with mongoose 
 1. Setting up Mongoose 
