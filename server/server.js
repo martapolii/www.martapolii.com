@@ -36,13 +36,15 @@ import assetsRouter from './assets-router.js'; // assuming assets-router is an E
 
 /**** MONGOOSE ****/ 
 import config from '../config/config.js';
+import app from './server/express.js'
+
 import mongoose from 'mongoose' //import mongoose to connect to MongoDB
 mongoose.Promise = global.Promise
 mongoose.connect(config.mongoUri, { useNewUrlParser: true,
 useCreateIndex: true, 
 useUnifiedTopology: true } )
 mongoose.connection.on('error', () => {
-throw new Error(`unable to connect to database: ${mongoUri}`) 
+throw new Error(`unable to connect to database: ${config.mongoUri}`) 
 })
 
 //2. Creating the Express application:
