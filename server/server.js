@@ -33,7 +33,17 @@ import path from 'path';
 //const assetsRouter = require("./assets-router");app.use("/src", assetsRouter);
 //const assetsRouter = require("./assets-router");
 import assetsRouter from './assets-router.js'; // assuming assets-router is an ES module too
+
+/**** MONGOOSE ****/ 
 import config from '../config/config.js';
+import mongoose from 'mongoose' //import mongoose to connect to MongoDB
+mongoose.Promise = global.Promise
+mongoose.connect(config.mongoUri, { useNewUrlParser: true,
+useCreateIndex: true, 
+useUnifiedTopology: true } )
+mongoose.connection.on('error', () => {
+throw new Error(`unable to connect to database: ${mongoUri}`) 
+})
 
 //2. Creating the Express application:
 const app = express(); // initializes the express application
