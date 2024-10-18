@@ -127,4 +127,5 @@ port 5001 serves the front end using express
 #5 Implement a user model with mongoose 
 1. Setting up Mongoose 
 yarn add mongoose
-- update server.js toimport the mongoose module
+- update server.js to import the mongoose module. configure it so that it uses native ES6 promises, use it to handle the connection to the MongoDB database 
+- Create a template.js file in the root
