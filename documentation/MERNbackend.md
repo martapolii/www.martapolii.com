@@ -90,3 +90,11 @@ yarn add --dev @babel/core babel-loader @babel/preset-env
 yarn dev 
 
 #4 Implement an Express server
+1. Configure express
+- install the express module:
+yarn add express
+- import into express.js file, configure, make available to rest of app:
+    import express from 'express’ 
+    const app = express()
+   /*... configure express ... */ 
+   export default app
