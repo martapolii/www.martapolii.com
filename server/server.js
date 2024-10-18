@@ -24,23 +24,26 @@ Date: October 13, 2024
 // change to import since using ES modules:
 import express from 'express';
 import path from 'path';
-
-//2. Creating the Express application:
-const app = express(); // initializes the express application
-
 //3. Importing the assets router defined in assets-router.js:
 //const assetsRouter = require("./assets-router");app.use("/src", assetsRouter);
 //const assetsRouter = require("./assets-router");
 import assetsRouter from './assets-router.js'; // assuming assets-router is an ES module too
+import config from '../config/config.js';
+
+//2. Creating the Express application:
+const app = express(); // initializes the express application
+
+//5. Serving Static Files: 
+//app.use("/", express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
+app.use("/", assetsRouter);
 
 //4. Display a message when the server is accessed: 
 app.get("/", (_req, res) => {
   res.send('{"message" : "Welcome to the DressStore Application. - Marta"}');
 });
 
-//5. Serving Static Files: 
-//app.use("/", express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
-app.use("/", assetsRouter);
+//serve static files from dist
+app.use(express.static(path.join(__dirname, "../dist")));
 
 //6. API Endpoint: 
 app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
@@ -56,14 +59,17 @@ app.get("/*", (_req, res) => { //a catch-all route for requests that don't match
 })
 
 //8. Starting the server 
-const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env
-app.listen(PORT, () => { // starts express server on specified port
+//const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env
+const port = config.port || 5001; // 
+app.listen(port, (err) =>  {// starts express server on specified port
   // console.log prints messages to the console
+  if (err) {
+    console.log(err) 
+    }
   console.log();
-  console.log(`  App running in port ${PORT}`); // server is running
+  console.log(('Server started on port ${port}.')); // server is running
   console.log();
-  console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${PORT}/\x1b[0m`); // prints URL where server can be accessed 
-
+  console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${port}/\x1b[0m`); // prints URL where server can be accessed 
 });
 
 

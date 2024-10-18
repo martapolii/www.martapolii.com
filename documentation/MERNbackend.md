@@ -106,3 +106,9 @@ helmet: yarn add helmet
 cors: yarn add cors 
 - update express.js to import these modules and update express app before exporting it for use in the server (see file comments)
 - express can now accept and process HTTP requests
+
+2. Starting the server 
+- update server.js to implement the server 
+import config from './config/config.js'; to set the port #
+app.use(express.static(path.join(__dirname, "../dist")));
+- update the app.listen function that sets the port with the config 
