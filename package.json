@@ -1,7 +1,7 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
-  "main": "server/server.js",
+  "main": "./server/server.js",
   "repository": "https://martapolii.github.io/www.martapolii.com/",
   "author": "martapolii <mpolish3@my.centennialcollege.ca>",
   "license": "MIT",
@@ -10,12 +10,12 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon server/server.js\"",
-    "start": "node server/server.js",
-    "build": "vite build",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
+  "dev": "concurrently \"vite --config ./client/vite.config.js\" \"nodemon ./server/server.js\"",
+  "start": "node ./server/server.js",
+  "build": "vite build --config ./client/vite.config.js",
+  "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+  "preview": "vite preview --config ./client/vite.config.js"
+},
   "dependencies": {
     "express": "^4.21.1",
     "global": "^4.4.0",
