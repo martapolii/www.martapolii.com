@@ -28,7 +28,8 @@ Steps to install the MERN backend:
           - would need to use a conditional root path to solve this
           - after doing some research, I only need the front end to work server-side, as that is how a full-stack app usually works 
 
-#2 Development dependencies
+#2. Install and configure necessary Node modules 
+2. Development dependencies
 - confifure + install Vite and Nodemon if not done already
 - check if they're installed globally:
 vite --version
@@ -43,7 +44,7 @@ npm install -g vite
 -can run vite locally without a global installation:
 npx vite --version
 
-#3 Configure Babel
+3. Configure Babel
 1. create babel.rc file in root, add this code:
 {
 "presets": [
@@ -57,5 +58,35 @@ npx vite --version
 ]
 }
 
-2. install Babel modules
+4.. install Babel modules
 yarn add --dev @babel/core babel-loader @babel/preset-env
+
+5. Config variables 
+- in config.js define some server-side configuration-related variables 
+ const config = {
+ env: process.env.NODE_ENV || 'development',
+ port: process.env.PORT || 3000,
+ jwtSecret: process.env.JWT_SECRET || "YOUR_secret_key", 
+ mongoUri: process.env.MONGODB_URI ||
+ process.env.MONGO_HOST ||
+ 'mongodb://' + (process.env.IP || 'localhost') + ':' + 
+(process.env.MONGO_PORT || '27017') +
+ '/mernproject'
+ }
+ export default config
+
+#3 Run scripts
+- yarn development script 
+- confirm this script in package.json: "dev": "concurrently \"vite --config ./client/vite.config.js\" \"nodemon ./server/server.js\""
+- add the type=module in the package.json in server side 
+- *** change to import from require in server.js since using ES modules:
+  import express from 'express';
+  import path from 'path';
+- *** had to add this to top of server.js file to use ES modules since __dirame is not available by default:
+    import { fileURLToPath } from 'url';
+    import { dirname } from 'path';
+- ** update assets-router.js (see file comments)
+- now run 
+yarn dev 
+
+#4 Implement an Express server

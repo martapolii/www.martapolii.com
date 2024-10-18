@@ -11,16 +11,27 @@ Date: October 13, 2024
     // since this didn't work, I created a server.js file in the root directory manually 
     // this file allows us to use out frontend in the backend. this will 'break' some routes (ex static assets will no longer show, need to fix this)
 
+    // had to add these to use ES modules since __dirame is not available by default:
+    import { fileURLToPath } from 'url';
+    import { dirname } from 'path';
+    
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
+    
 //1. Importing the required modules:
-const express = require("express"); // to create an express application
-const path = require("path"); // to work with file and directory paths
+// const express = require("express"); // to create an express application
+// const path = require("path"); // to work with file and directory paths
+// change to import since using ES modules:
+import express from 'express';
+import path from 'path';
 
 //2. Creating the Express application:
 const app = express(); // initializes the express application
 
 //3. Importing the assets router defined in assets-router.js:
 //const assetsRouter = require("./assets-router");app.use("/src", assetsRouter);
-const assetsRouter = require("./assets-router");
+//const assetsRouter = require("./assets-router");
+import assetsRouter from './assets-router.js'; // assuming assets-router is an ES module too
 
 //4. Display a message when the server is accessed: 
 app.get("/", (_req, res) => {

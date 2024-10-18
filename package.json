@@ -1,6 +1,7 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
+  "type":"module",
   "main": "./server/server.js",
   "repository": "https://martapolii.github.io/www.martapolii.com/",
   "author": "martapolii <mpolish3@my.centennialcollege.ca>",
