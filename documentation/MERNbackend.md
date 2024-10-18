@@ -112,3 +112,13 @@ cors: yarn add cors
 import config from './config/config.js'; to set the port #
 app.use(express.static(path.join(__dirname, "../dist")));
 - update the app.listen function that sets the port with the config 
+
+- added an.env file in root and defined port #
+- the install dotenv to load environmemtal variables
+ npm install dotenv
+ - import dotenv in server.js:
+ // import dotenv to use environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+port 5173 serves the front end using vite
+port 5001 serves the front end using express 

@@ -11,6 +11,11 @@ Date: October 13, 2024
     // since this didn't work, I created a server.js file in the root directory manually 
     // this file allows us to use out frontend in the backend. this will 'break' some routes (ex static assets will no longer show, need to fix this)
 
+// import dotenv to use environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+
+
     // had to add these to use ES modules since __dirame is not available by default:
     import { fileURLToPath } from 'url';
     import { dirname } from 'path';
@@ -67,9 +72,9 @@ app.listen(port, (err) =>  {// starts express server on specified port
     console.log(err) 
     }
   console.log();
-  console.log(('Server started on port ${port}.')); // server is running
+  console.log((`Server started on port ${port}.`)); // server is running
   console.log();
-  console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${port}/\x1b[0m`); // prints URL where server can be accessed 
+  console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${port}/\x1b[0m`); // prints URL where server can be accessed 
 });
 
 
