@@ -4,23 +4,36 @@
 
 */
 
+// // import express and create a router:
+// const express = require("express");
+// const router = express.Router();
+
+// // define the regex for images and videos:
+// const imageRegex = /\/.+\.(svg|png|jpg|png|jpeg)$/; // image formats
+// const videoRegex = /\/.+\.(mp4|ogv)$/ //video formats
+
+// // iterate over the regex patterns and create a route for each:
+// router.get(imageRegex, (req, res) => {
+//   const filePath = req.path;
+//   res.redirect(303, `http://localhost:3000/src${filePath}`);
+// });
+// router.get(videoRegex, (req, res) => {
+//   const filePath = req.path;
+//   res.redirect(303, `http://localhost:3000/src${filePath}`);
+// });
+
+// //export the router:
+// module.exports = router; //reference in server.js file
+
+
+//trying this instead:
 // import express and create a router:
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 
-// define the regex for images and videos:
-const imageRegex = /\/.+\.(svg|png|jpg|png|jpeg)$/; // image formats
-const videoRegex = /\/.+\.(mp4|ogv)$/ //video formats
+// Serve all assets directly from the dist folder (including images and videos)
+router.use(express.static(path.join(__dirname, "../dist")));
 
-// iterate over the regex patterns and create a route for each:
-router.get(imageRegex, (req, res) => {
-  const filePath = req.path;
-  res.redirect(303, `http://localhost:3000/src${filePath}`);
-});
-router.get(videoRegex, (req, res) => {
-  const filePath = req.path;
-  res.redirect(303, `http://localhost:3000/src${filePath}`);
-});
-
-//export the router:
-module.exports = router; //reference in server.js file
+// export the router:
+module.exports = router;

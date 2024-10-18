@@ -19,7 +19,8 @@ const path = require("path"); // to work with file and directory paths
 const app = express(); // initializes the express application
 
 //3. Importing the assets router defined in assets-router.js:
-const assetsRouter = require("./assets-router");app.use("/src", assetsRouter);
+//const assetsRouter = require("./assets-router");app.use("/src", assetsRouter);
+const assetsRouter = require("./assets-router");
 
 //4. Display a message when the server is accessed: 
 app.get("/", (_req, res) => {
@@ -27,7 +28,8 @@ app.get("/", (_req, res) => {
 });
 
 //5. Serving Static Files: 
-app.use("/", express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
+//app.use("/", express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
+app.use("/", assetsRouter);
 
 //6. API Endpoint: 
 app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
