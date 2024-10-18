@@ -36,7 +36,6 @@ import assetsRouter from './assets-router.js'; // assuming assets-router is an E
 
 /**** MONGOOSE ****/ 
 import config from '../config/config.js';
-import app from './server/express.js'
 
 import mongoose from 'mongoose' //import mongoose to connect to MongoDB
 mongoose.Promise = global.Promise
