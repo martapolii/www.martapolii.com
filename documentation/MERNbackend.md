@@ -129,3 +129,12 @@ port 5001 serves the front end using express
 yarn add mongoose
 - update server.js to import the mongoose module. configure it so that it uses native ES6 promises, use it to handle the connection to the MongoDB database 
 - Create a template.js file in the root
+- update express.js to serve this file at the root
+import Template from './../template.js'
+...
+app.get('/', (req, res) => {
+res.status(200).send(Template()) 
+})
+...
+- Run npm install mongodb
+- add connection string (mongoURi)
