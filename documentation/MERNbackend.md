@@ -143,7 +143,7 @@ res.status(200).send(Template())
     - add connection string as environmental variable and add .gitignore file with .env in it
 - update server.js
 import app from './server/express.js'
-throw new Error(`unable to connect to database: ${config.mongoUri}`) 
+- throws new Error(`unable to connect to database: ${config.mongoUri}`) -*will continue with configuration of MongoDB database and troubleshoot after
 - run the server:
 cd client
 yarn dev
@@ -158,6 +158,15 @@ yarn dev
 4. run: yarn add lodash - used when updating 
 - run: Yarn add method-override
 
+5. create route.js files for both contact and user to define the routes for handling all CRUD opertions for their API's (GET/POST/PUT/DELETE)
+- syntax: router.route('url')l.get(controllername.methodname)
+- example: router.route('api/contacts').get(contactCtrl.read)
+
+6. update express.js by importing all route files 
+- configure express to use body-parser as middleware (add below lines above configurations)
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+- configure routes as well
 
 
 
