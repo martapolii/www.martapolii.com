@@ -117,7 +117,7 @@ app.use(express.static(path.join(__dirname, "../dist")));
 - added an.env file in root and defined port #
 - the install dotenv to load environmemtal variables
  npm install dotenv
- 
+
  - import dotenv in server.js:
 import dotenv from 'dotenv';
 dotenv.config();
@@ -126,7 +126,7 @@ port 5001 serves the front end using express
 - configure to read .env from root folder:
  dotenv.config({ path: path.resolve(__dirname, '../.env') }); 
 
-#5 Implement a user model with mongoose 
+#5 Implement a user and contact model and controllers with mongoose 
 1. Setting up Mongoose 
 yarn add mongoose
 - update server.js to import the mongoose module. configure it so that it uses native ES6 promises, use it to handle the connection to the MongoDB database 
@@ -147,3 +147,17 @@ throw new Error(`unable to connect to database: ${config.mongoUri}`)
 - run the server:
 cd client
 yarn dev
+
+2. Creating the user and contat models 
+- create a model for both the user and contact collection in your database
+  - define a schema for the type of data to be stored (name, data type, certain conditions/restrictions/business rules)
+
+3. Create the controllers
+- 
+
+4. run: yarn add lodash - used when updating 
+- run: Yarn add method-override
+
+
+
+

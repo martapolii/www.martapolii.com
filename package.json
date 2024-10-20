@@ -29,6 +29,7 @@
     "express": "^4.21.1",
     "global": "^4.4.0",
     "helmet": "^8.0.0",
+    "lodash": "^4.17.21",
     "mongodb": "^6.9.0",
     "mongoose": "^8.7.2",
     "vite": "^5.4.9"
