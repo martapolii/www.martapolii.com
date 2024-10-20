@@ -1,8 +1,8 @@
-// controller methods for user controller
+// controller methods for user controller CRUD operations
 
-import User from '../models/user.model.js'
-import extend from 'lodash/extend.js'
-import errorHandler from './error.controller.js'
+import User from '../models/user.model.js';
+import extend from 'lodash/extend.js';
+import errorHandler from './error.controller.js';
 
 //GET - Read/get all users
 const read = async (req, res) => {
