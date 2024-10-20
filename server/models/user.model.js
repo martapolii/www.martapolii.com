@@ -1,7 +1,6 @@
 //create a model for the users
 import mongoose from 'mongoose'
 
-
 const UserSchema = new mongoose.Schema({
 //namme
   name: {
@@ -19,6 +18,12 @@ const UserSchema = new mongoose.Schema({
     required: 'Email is required'
     },
 
+//password
+password: {
+  type: String,
+  required: 'Password is required'
+  },
+  
 //created
   created: {
     type: Date,
@@ -29,13 +34,7 @@ const UserSchema = new mongoose.Schema({
   updated: {
     type: Date,
     default: Date.now
-    },
-    
-//password
-  password: {
-    type: String,
-    required: 'Password is required'
-    },
+    }
 });
 
 const User = mongoose.model('User', UserSchema);
