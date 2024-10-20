@@ -12,84 +12,81 @@ Date: October 13, 2024
     // this file allows us to use out frontend in the backend. this will 'break' some routes (ex static assets will no longer show, need to fix this)
 
 
-//1. Importing the required modules:
-// had to add to use ES modules since __dirame is not available by default:
-// import dotenv to use environment variables
-import dotenv from 'dotenv';
-// const path = require("path"); // to work with file and directory paths
-import path from 'path';
+//Importing the required modules:
+  // import dotenv to use environment variables
+  import dotenv from 'dotenv';
+  // const path = require("path"); // to work with file and directory paths
+  import path from 'path';
   import { fileURLToPath } from 'url';
+  // __dirame is not available by default:
   import { dirname } from 'path';
+  import mongoose from 'mongoose' //import mongoose to connect to MongoDB
+  import config from '../config/config.js'; //import the configuration file
+  import express from 'express'; // to create an express application
+  import assetsRouter from './assets-router.js'; // Import the assets router defined in assets-router.js
         
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
-
+    
+// load environment variables from a .env file into process.env
 dotenv.config({ path: path.resolve(__dirname, '../.env') }); // make sure dotenv is reading .env file from the root directory
-
-// const express = require("express"); // to create an express application
-import express from 'express';
-
-//3. Importing the assets router defined in assets-router.js:
-//const assetsRouter = require("./assets-router");app.use("/src", assetsRouter);
-//const assetsRouter = require("./assets-router");
-import assetsRouter from './assets-router.js'; // assuming assets-router is an ES module too
+// dotenv.config(); <- normally this would work, but since we are using a different directory structure, we need to specify the path
 
 /**** MONGOOSE ****/ 
-import config from '../config/config.js';
-
-import mongoose from 'mongoose' //import mongoose to connect to MongoDB
-mongoose.Promise = global.Promise
-mongoose.connect(config.mongoUri, { 
-  //commented out these 3 because terminal says they are depricated
-//useNewUrlParser: true,
-//useCreateIndex: true,  
-useUnifiedTopology: true 
-} )
-mongoose.connection.on('error', () => {
-throw new Error(`unable to connect to database: ${config.mongoUri}`) 
-})
+  mongoose.Promise = global.Promise
+  mongoose.connect(config.mongoUri, { 
+      //commented out these 2 because terminal says they are depricated
+    //useNewUrlParser: true,
+    //useCreateIndex: true,  
+    useUnifiedTopology: true 
+  } )
+    mongoose.connection.on('error', () => {
+      console.error(`unable to connect to database: ${config.mongoUri}`) 
+      console.error('Error message:'); // added to give me slightly more information about the error
+  });
 
 
-//2. Creating the Express application:
-const app = express(); // initializes the express application
+// Creating the Express application:
+  const app = express(); // initializes the express application
 
-//5. Serving Static Files: 
-//app.use("/", express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified 
-app.use("/", assetsRouter);
+// Serving Static Files:  (**normlly don't need both below methods, but this is what worked for me)
+  //serve static files from dist
+  app.use(express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified
+// Configure assets router to serve images and videos:
+  app.use("/", assetsRouter);
 
-//4. Display a message when the server is accessed: 
-app.get("/", (_req, res) => {
-  res.send('{"message" : "Welcome to the DressStore Application. - Marta"}');
-});
+// Display a message when the server is accessed: 
+  app.get("/", (_req, res) => {
+    res.send('{"message" : "Welcome to the DressStore Application. - Marta"}');
+  });
 
-//serve static files from dist
-app.use(express.static(path.join(__dirname, "../dist")));
+// API Endpoint: 
+  app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
+    res.json({ // sends a JSON response with details about the project
+      project: "React and Express Boilerplate",
+      from: "Vanaldito",
+    });
+  });
 
-//6. API Endpoint: 
-app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
-  res.json({ // sends a JSON response with details about the project
-    project: "React and Express Boilerplate",
-    from: "Vanaldito",
-  });
-});
-
-//7. Catch-All Route for client-side routing: 
+//Catch-All Route for client-side routing: 
 app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
-  res.sendFile(path.join(__dirname, "../dist", "index.html")); //serves index.html from the client directory
+  res.sendFile(path.join(__dirname, "../dist", "index.html")); //serves index.html from the client directory
 });
 
-//8. Starting the server 
-//const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env
-const port = config.port || 5001; // 
-app.listen(port, (err) =>  {// starts express server on specified port
-  // console.log prints messages to the console
-  if (err) {
-    console.log(err) 
-    }
-  console.log();
-  console.log((`Server started on port ${port}.`)); // server is running
-  console.log();
-  console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${port}/\x1b[0m`); // prints URL where server can be accessed 
-});
+// Starting the server 
+  //const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env
+  const port = config.port || 5001; // 
+  app.listen(port, (err) =>  {// starts express server on specified port
+    // console.log prints messages to the console
+    if (err) {
+      console.log(err) 
+      }
+    console.log();
+    console.log((`Server started on port ${port}.`)); // server is running
+    console.log();
+    console.log(`  > Local: \x1b[36mhttp://localhost:\x1b[1m${port}/\x1b[0m`); // prints URL where server can be accessed 
+  });
 
+
+  console.log('Mongo URI:', config.mongoUri); // Add this to check if the value is being loaded
 
