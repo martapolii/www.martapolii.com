@@ -16,48 +16,72 @@ const read = async (req, res) => {
   } 
 };
 
+// GET - get user by ID
+const readById = async (req, res) => {
+  try {
+    let user = req.profile
+    return res.json(user)
+  } catch (err) { 
+      return res.status(400).json({
+        error: errorHandler.getErrorMessage(err) 
+    });
+  }
+}
+
 //POST - Create/add a new user 
 const create = async (req, res) => { 
 const user = new User(req.body) 
 try {
-await user.save()
-return res.status(200).json({ 
-message: "Successfully created user!"
-})
-} catch (err) {
-return res.status(500).json({
-error: errorHandler.getErrorMessage(err) 
-});
-} 
+    await user.save()
+    return res.status(200).json({ 
+      message: "Successfully created user!"
+      })
+    } catch (err) {
+      return res.status(500).json({
+        error: errorHandler.getErrorMessage(err) 
+    });
+  } 
 };
 
 // PUT - Update a user by ID
 const update = async (req, res) => { 
   try {
-  let user = req.profile
-  user = extend(user, req.body); 
-  user.updated = Date.now(); 
-  await user.save()
-  res.json(user) 
-  } catch (err) {
-  return res.status(500).json({
-  error: errorHandler.getErrorMessage(err) 
-  });
+    let user = req.profile
+    user = extend(user, req.body); 
+    user.updated = Date.now(); 
+    await user.save()
+    res.json(user) 
+    } catch (err) {
+      return res.status(500).json({
+        error: errorHandler.getErrorMessage(err) 
+    });
   } 
-  };
+};
 
-  //DELETE -  remove a user by ID
+//DELETE -  remove a user by ID
   const remove = async (req, res) => { 
     try {
-    let user = req.profile
-    let deletedUser = await user.deleteOne(); 
-    res.json(deletedUser) 
+      let user = req.profile
+      let deletedUser = await user.deleteOne(); 
+      res.json(deletedUser) 
     } catch (err) {
-    return res.status(500).json({
-    error: errorHandler.getErrorMessage(err) 
+      return res.status(500).json({
+        error: errorHandler.getErrorMessage(err) 
     });
     } 
     };
+
+// DELETE - remove all users
+const removeAll = async (req, res) => {
+  try {
+    let users = await User.deleteMany();
+    res.json(users);
+  } catch (error) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(error)
+    });
+  }
+};
 
 //middleware to find user by ID and populate req.profile
 const userByID = async (req, res, next, id) => {
@@ -77,5 +101,5 @@ const userByID = async (req, res, next, id) => {
   }
 };
 
-
-export default { read, create, update, remove, userByID };
+//export all functions
+export default { read, readById, create, update, remove, removeAll, userByID };
