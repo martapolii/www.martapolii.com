@@ -168,5 +168,9 @@ yarn dev
   app.use(express.urlencoded({ extended: true }));
 - configure routes as well
 
-
+TROUBLESHOOTING:
+- had alot of issues passing the mongodb uri from .env file through config.js to server.js. Solution was to import dotenv directly in config.js:
+//config.js
+import dotenv from 'dotenv';
+dotenv.config();
 
