@@ -12,7 +12,7 @@ const router = express.Router()
 router.route('api/contacts').get(contactCtrl.read)
 
 // GET - get contacts by ID
-router.route('api/contacts/:id').get(conactCtrl.readById)
+router.route('api/contacts/:id').get(contactCtrl.readById)
 
 // POST - add a new contact
 router.route('api/contacts').post(contactCtrl.create)

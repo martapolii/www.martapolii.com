@@ -5,8 +5,6 @@ import Contact from '../models/contact.model.js'
 import extend from 'lodash/extend.js'
 import errorHandler from './error.controller.js'
 
-
-
 //GET - Read/get all contacts 
 const read = async (req, res) => {
   try {
@@ -18,14 +16,15 @@ const read = async (req, res) => {
     });
   } 
 };
+
 // GET - get contacts by ID
 const readById = async (req, res) => {
   try {
     let contact = req.profile
     return res.json(contact)
   } catch (err) { 
-    return res.status(400).json({
-    error: errorHandler.getErrorMessage(err) 
+      return res.status(400).json({
+        error: errorHandler.getErrorMessage(err) 
     });
   }
 }
@@ -34,44 +33,44 @@ const readById = async (req, res) => {
 const create = async (req, res) => { 
   const contact = new Contact(req.body) 
   try {
-  await contact.save()
-  return res.status(200).json({ 
-  message: "Successfully created new contact!"
-  })
-  } catch (err) {
-  return res.status(400).json({
-  error: errorHandler.getErrorMessage(err) 
-  });
+    await contact.save()
+    return res.status(200).json({ 
+      message: "Successfully created new contact!"
+    })
+    } catch (err) {
+      return res.status(400).json({
+        error: errorHandler.getErrorMessage(err) 
+    });
   } 
-  };
+};
 
 // PUT - Update a contact by ID
 const update = async (req, res) => { 
   try {
-  let contact = req.profile
-  contact = extend(contact, req.body); 
-  contact.updated = Date.now(); 
-  await contact.save()
-  res.json(contact) 
+    let contact = req.profile
+    contact = extend(contact, req.body); 
+    contact.updated = Date.now(); 
+    await contact.save()
+    res.json(contact) 
   } catch (err) {
-  return res.status(400).json({
-  error: errorHandler.getErrorMessage(err) 
-  });
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err) 
+    });
   } 
-  };
+};
 
   //DELETE -  remove a contact by ID
   const remove = async (req, res) => { 
     try {
-    let contact = req.profile
-    let deletedContact = await contact.deleteOne(); 
-    res.json(deletedContact) 
+      let contact = req.profile
+      let deletedContact = await contact.deleteOne(); 
+      res.json(deletedContact) 
     } catch (err) {
-    return res.status(400).json({
-    error: errorHandler.getErrorMessage(err) 
+      return res.status(400).json({
+        error: errorHandler.getErrorMessage(err) 
     });
-    } 
-    };
+  } 
+};
 
 // DELETE - remove all contacts
 const removeAll = async (req, res) => {
@@ -103,5 +102,5 @@ const contactByID = async (req, res, next, id) => {
   }
 };
 
-
+//export all functions
 export default { read, readById, create, update, remove, removeAll, contactByID};
