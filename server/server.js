@@ -74,7 +74,7 @@ app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests t
 //7. Catch-All Route for client-side routing: 
 app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
   res.sendFile(path.join(__dirname, "../dist", "index.html")); //serves index.html from the client directory
-})
+});
 
 //8. Starting the server 
 //const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env
