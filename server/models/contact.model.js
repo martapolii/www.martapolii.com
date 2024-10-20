@@ -1,5 +1,5 @@
 //create a model for the user stories 
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 
 const ContactSchema = new mongoose.Schema({

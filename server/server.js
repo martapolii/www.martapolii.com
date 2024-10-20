@@ -57,18 +57,11 @@ Date: October 13, 2024
     res.send('{"message" : "Welcome to the DressStore Application. - Marta"}');
   });
 
-// API Endpoint: 
-  app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
-    res.json({ // sends a JSON response with details about the project
-      project: "React and Express Boilerplate",
-      from: "Vanaldito",
-    });
-  });
 
-//Catch-All Route for client-side routing: 
-app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
-  res.sendFile(path.join(__dirname, "../dist", "index.html")); //serves index.html from the client directory
-});
+//Catch-All Route for client-side routing: - moved to express.js
+// app.get("/*", (_req, res) => { //a catch-all route for requests that don't match any other routes 
+//   res.sendFile(path.join(__dirname, "../dist", "index.html")); //serves index.html from the client directory
+// });
 
 // Starting the server 
   //const { PORT = 5001 } = process.env; // sets port variable to 5000 unless specified in .env

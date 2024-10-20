@@ -24,15 +24,6 @@ const __dirname = dirname(__filename);
 //create an express app
 const app = express(); 
 
-// Serving Static Files:  (**normlly don't need both below methods, but this is what worked for me)
-  //serve static files from dist
-  app.use(express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified
-
-//serve template at the root URL
-app.get('/', (req, res) => {
-  res.status(200).send(Template()) 
-  });
-
 //configure express to use body-parser as middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -44,12 +35,34 @@ app.use(compress());
 app.use(helmet());
 app.use(cors());
 
+//serve template at the root URL
+app.get('/', (req, res) => {
+  res.status(200).send(Template()) 
+  });
+
 //configure routes
 app.use('/api/users', userRoutes);
 app.use('/api/contacts', contactRoutes);
 
+// API Endpoint: 
+app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests to /api/v1
+    res.json({ // sends a JSON response with details about the project
+      project: "React and Express Boilerplate",
+      from: "Vanaldito",
+    });
+  });
+
 // Configure assets router to serve images and videos:
 app.use("/", assetsRouter); 
+
+// Serving Static Files:  (**normlly don't need both below methods, but this is what worked for me)
+  //serve static files from dist
+  app.use(express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified
+
+//catch-all route
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist", "index.html")); // Serves index.html for non-API routes
+});
 
 //export the express app
 export default app;
