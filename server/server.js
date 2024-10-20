@@ -13,38 +13,41 @@ Date: October 13, 2024
 
 
 //Importing the required modules:
-  // import dotenv to use environment variables
-  import dotenv from 'dotenv';
   // const path = require("path"); // to work with file and directory paths
-  import path from 'path';
   import { fileURLToPath } from 'url';
+  import path from 'path';
   // __dirame is not available by default:
   import { dirname } from 'path';
+  // import dotenv to use environment variables
+  import dotenv from 'dotenv';
+
+
+  // Define the __filename and __dirname variables for ES modules
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+
+  // load environment variables from a .env file into process.env
+  dotenv.config({ path: path.resolve(__dirname, '../.env') }); // make sure dotenv is reading .env file from the root directory
+  // dotenv.config(); <- normally this would work, but since we are using a different directory structure, we need to specify the path
+
   import mongoose from 'mongoose' //import mongoose to connect to MongoDB
   import config from '../config/config.js'; //import the configuration file
   import express from 'express'; // to create an express application
   import assetsRouter from './assets-router.js'; // Import the assets router defined in assets-router.js
-        
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
-    
-// load environment variables from a .env file into process.env
-dotenv.config({ path: path.resolve(__dirname, '../.env') }); // make sure dotenv is reading .env file from the root directory
-// dotenv.config(); <- normally this would work, but since we are using a different directory structure, we need to specify the path
 
 /**** MONGOOSE ****/ 
   mongoose.Promise = global.Promise
-  mongoose.connect(config.mongoUri, { 
-      //commented out these 2 because terminal says they are depricated
-    //useNewUrlParser: true,
-    //useCreateIndex: true,  
-    useUnifiedTopology: true 
-  } )
+  mongoose.connect(config.mongoUri, { useNewUrlParser: true,
+    //useCreateIndex: true, 
+    //useUnifiedTopology: true
+    } )
+      .then(() => {
+        console.log("Connected to the database!");
+      }) 
     mongoose.connection.on('error', () => {
-      console.error(`unable to connect to database: ${config.mongoUri}`) 
-      console.error('Error message:'); // added to give me slightly more information about the error
-  });
-
+    throw new Error(`unable to connect to database: ${config.mongoUri}`) 
+    })
+    
 
 // Creating the Express application:
   const app = express(); // initializes the express application
