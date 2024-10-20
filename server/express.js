@@ -11,7 +11,7 @@ import Template from './../template.js' //import the template.js file do its ser
 import userRoutes from './routes/user.routes.js'
 // import contact routes
 import contactRoutes from './routes/contact.routes.js'
-
+//create an express app
 const app = express()
 
 //serve template at the root URL
@@ -35,4 +35,5 @@ app.use(compress())
 app.use(helmet())
 app.use(cors())
 
+//export the express app
 export default app
