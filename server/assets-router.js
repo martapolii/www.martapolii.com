@@ -26,22 +26,22 @@
 // module.exports = router; //reference in server.js file
 
 
-//trying this instead:
-// import express and create a router:
-import express from 'express'; // Use import instead of require bc ES modules
-import path from 'path';
-import { fileURLToPath } from 'url';
+//Above cide kept giving me issues, trying this instead:
+  // import express and create a router:
+  import express from 'express'; // Use import instead of require bc ES modules
+  import path from 'path';
+  import { fileURLToPath } from 'url';
 
-// Serve all assets directly from the dist folder (including images and videos)
-//router.use(express.static(path.join(__dirname, "../dist"))); <- no longer works after adding ES modules bc __dirname isn't available
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+  // Serve all assets directly from the dist folder (including images and videos)
+  //router.use(express.static(path.join(__dirname, "../dist"))); <- no longer works after adding ES modules bc __dirname isn't available
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
-const router = express.Router();
-router.use(express.static(path.join(__dirname, "../dist"))); //try again after defining dirname
+  const router = express.Router();
+  router.use(express.static(path.join(__dirname, "../dist"))); //try again after defining dirname
 
 
 
-// export the router:
-//module.exports = router;
-export default router; //using ES module syntax
+  // export the router:
+  //module.exports = router;
+  export default router; //using ES module syntax

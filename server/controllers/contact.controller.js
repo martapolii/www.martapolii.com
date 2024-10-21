@@ -1,9 +1,9 @@
 // controller methods for contact controller
 
 // import model + lodash + error handler
-import Contact from '../models/contact.model.js'
-import extend from 'lodash/extend.js'
-import errorHandler from './error.controller.js'
+import Contact from '../models/contact.model.js';
+import extend from 'lodash/extend.js';
+import errorHandler from './error.controller.js';
 
 //GET - Read/get all contacts 
 const read = async (req, res) => {
