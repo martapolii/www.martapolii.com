@@ -6,6 +6,7 @@ import errorHandler from './error.controller.js';
 
 //GET - Read/get all users
 const read = async (req, res) => {
+  console.log("is this working???");
   try {
     const user = await User.find(); 
     res.status(200).json(user); 
