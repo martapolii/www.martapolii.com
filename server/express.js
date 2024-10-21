@@ -49,7 +49,6 @@ app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests t
 
 // Configure (2)ASSETS ROUTER to serve images and videos:
 app.use("/", assetsRouter); 
-
 // Serve (3)STATIC FILES from dist
 app.use(express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified
 
@@ -58,10 +57,10 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist", "index.html")); // Serves index.html for non-API routes
 });
 
-//serve template at the root URL
-app.get('/', (req, res) => {
-  res.status(200).send(Template()) 
-  });
-
+//serve template at the root URL (put this above assets router(2) to serve the template at the root URL)
+  app.get('/', (req, res) => {
+    res.status(200).send(Template()) 
+    });
+  
 //export the express app
 export default app;
