@@ -33,12 +33,9 @@ app.use(compress());
 app.use(helmet());
 app.use(cors());
 
-//serve template at the root URL
-app.get('/', (req, res) => {
-  res.status(200).send(Template()) 
-  });
+//It's important that the below code is in the order specified:
 
-//configure routes for users and contacts API's
+//Configure (1)API ROUTES for users and contacts API's
 app.use('/api/users', userRoutes);
 app.use('/api/contacts', contactRoutes);
 
@@ -50,16 +47,21 @@ app.get("/api/v1", (_req, res) => { //defines a route handler for GET requests t
     });
   });
 
-// Configure assets router to serve images and videos:
+// Configure (2)ASSETS ROUTER to serve images and videos:
 app.use("/", assetsRouter); 
 
-// Serving Static files from dist
-  app.use(express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified
+// Serve (3)STATIC FILES from dist
+app.use(express.static(path.join(__dirname, "../dist"))); //middleware that serves static files from the dist folder when the root URL (/) is specified
 
-//catch-all route
+// (4)CATCH-ALL route
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist", "index.html")); // Serves index.html for non-API routes
 });
+
+//serve template at the root URL
+app.get('/', (req, res) => {
+  res.status(200).send(Template()) 
+  });
 
 //export the express app
 export default app;
