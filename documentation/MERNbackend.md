@@ -178,4 +178,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 - also had lots of issues getting the API routes to work. Postman keeps serving my index.html page, meaning my catch-all route is working, but my API routes are not being triggered
+TRIED:
+  - re-ordering routes in express.js file to make sure none are interfering with the API routes
+  - triple checking logic in controllers
+  - triple checking syntax in route files 
+  - making sure all these files are properly 'connected', controllers/models/routes imported, etc
+  - using console.log to troubleshoot (API routes are not being triggered)
+  - changing my header in postman so accept value is application/json 
+  - organizing server.js and express.js files and seperating logic in each as needed
+  - commenting out middleware that serves static files and catch-all route in express.js file - get error message in browser: "Cannot GET /api/users" and console 404 error
+    - when I try post request get 404 error in postman console and "Cannot POST /api/users" in browser 
 
