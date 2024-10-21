@@ -158,19 +158,24 @@ yarn dev
 4. run: yarn add lodash - used when updating 
 - run: Yarn add method-override
 
-5. create route.js files for both contact and user to define the routes for handling all CRUD opertions for their API's (GET/POST/PUT/DELETE)
+#6. implement API endpoints with Express router
+1. create route.js files for both contact and user to define the routes for handling all CRUD opertions for their API's (GET/POST/PUT/DELETE)
 - syntax: router.route('url')l.get(controllername.methodname)
 - example: router.route('api/contacts').get(contactCtrl.read)
 
-6. update express.js by importing all route files 
+2. update express.js by importing all route files 
 - configure express to use body-parser as middleware (add below lines above configurations)
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 - configure routes as well
+
+3. test requests with postman
 
 TROUBLESHOOTING:
 - had alot of issues passing the mongodb uri from .env file through config.js to server.js. Solution was to import dotenv directly in config.js:
 //config.js
 import dotenv from 'dotenv';
 dotenv.config();
+
+- also had lots of issues getting the API routes to work. Postman keeps serving my index.html page, meaning my catch-all route is working, but my API routes are not being triggered
 
