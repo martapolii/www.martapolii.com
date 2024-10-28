@@ -189,3 +189,16 @@ TRIED:
   - commenting out middleware that serves static files and catch-all route in express.js file - get error message in browser: "Cannot GET /api/users" and console 404 error
     - when I try post request get 404 error in postman console and "Cannot POST /api/users" in browser 
 
+** .env file published with sensitive info - to prevent this from happening need to make sure file isnt being tracked:
+git rm .env --cached    
+git commit -m "Stopped tracking .env"
+- next push to github will just say 'file was deleted' if you try to open the commit
+
+
+**FIX TO BACKEND ISSUE**
+I believe I misunderstood the assignment - seems like I was suposed to build a stand-alone backend, as no where did it say that I should build a front-end page to display the content retrieved from the database. The issue was I built a back end and DID NOT 'CONNECT' it to the front end. Normally you would have content displayed on the page which an API retrieves from a database. I just had content in this database, wrote the API routes and controllers in the back end, but did not call on them from the front-end. To fix this issue for the sake of the assignment, I could just call the API routes from the index.html page upon loading the page. This wouldn't make sense for the  website, but then my postman requests would work. 
+
+I plan to use a database to store the content on my 'services' and 'projects' pages, and then use API's to retrieve the content.
+
+
+(Note for self: look into axios)
