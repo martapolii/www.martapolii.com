@@ -68,7 +68,7 @@ export default function Project() {
             <img src={proj3Imgs[2]} alt="Bug Smasher Game" />
           </div>
           <div>
-            <a href="https://studentweb.cencol.ca/mpolish3/COMP125/Assignment3/">https://studentweb.cencol.ca/mpolish3/COMP125/Assignment3/</a>
+            <a href="https://martapolii.github.io/project-game-bugsmasher/">https://martapolii.github.io/project-game-bugsmasher/</a>
             <p>
               The Bug Smasher game is an interactive <span className="bold">JavaScript</span>-based web game where players click on moving bugs to smash them within a time limit. The game uses <span className="bold">DOM manipulation</span> and <span className="bold">event handling</span> to detect user input, update scores, and provide a dynamic, fun experience with animations and timed interactions.
             </p>
