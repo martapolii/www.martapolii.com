@@ -1,8 +1,5 @@
 /*
 File name: project.jsx
-Student Name: Marta Polishchuk
-Student ID: 301432299
-Date: October 1, 2024 
  */
 import '../project.css'
 import '../index.css'

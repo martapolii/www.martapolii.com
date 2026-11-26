@@ -1,8 +1,5 @@
 /*
 File name: contact.jsx
-Student Name: Marta Polishchuk
-Student ID: 301432299
-Date: October 1, 2024 
  */
 
 import '../contact.css'
@@ -15,9 +12,9 @@ export default function Contact() {
       <div className="contact-container">
         <h2>Contact Information</h2>
         <p>
-          Email:<a href="mailto:m.polishchuk@hotmail.ca">m.polishchuk@hotmail.ca</a> <br />
-          Phone: &nbsp; (647) 962-5118 <br/>
-          Location: &nbsp; Toronto, ON
+          Email:<a>Redacted.</a> <br />
+          Phone: &nbsp; Redacted.<br/>
+          Location: &nbsp; Redacted.
         </p>
         <div>
             <ul>

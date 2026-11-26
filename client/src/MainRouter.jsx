@@ -1,8 +1,5 @@
 /*
 File name: MainRouter.jsx
-Student Name: Marta Polishchuk
-Student ID: 301432299
-Date: October 1, 2024 
  */
 
 //file to manage navigation between pages, by storing route paths (similar to anchor elements in html)

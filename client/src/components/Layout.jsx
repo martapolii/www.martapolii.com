@@ -1,8 +1,5 @@
 /*
 File name: Layout.jsx
-Student Name: Marta Polishchuk
-Student ID: 301432299
-Date: October 1, 2024 
  */
 
 // this file manages layout and navigation for the site
